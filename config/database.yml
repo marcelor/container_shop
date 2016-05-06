@@ -15,6 +15,7 @@ production:
   database: <%= ENV['CONTAINER_STORE_DB_NAME'] %>
   username: <%= ENV['CONTAINER_STORE_DB_USERNAME'] %>
   password: <%= ENV['CONTAINER_STORE_DB_PASSWORD'] %>
+  host: <%= ENV['CONTAINER_STORE_DB_HOST'] %>
 
 test:
   <<: *default
