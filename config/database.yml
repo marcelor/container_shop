@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  min_messages: warning
+
+development:
+  <<: *default
+  database: container_store_development
+  username: marcelor
+  password: ba3690
+  host:     localhost
+
+production:
+  <<: *default
+  database: <%= ENV['CONTAINER_STORE_DB_NAME'] %>
+  username: <%= ENV['CONTAINER_STORE_DB_USERNAME'] %>
+  password: <%= ENV['CONTAINER_STORE_DB_PASSWORD'] %>
+
+test:
+  <<: *default
+  database: container_store_test
+  username: marcelor
+  password: ba3690
+  host:     localhost
